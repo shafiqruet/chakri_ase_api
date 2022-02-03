@@ -1,0 +1,6 @@
+Array
+(
+    [uid] => 1
+    [jobId] => 3
+    [action] => job_apply
+)
