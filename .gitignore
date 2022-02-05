@@ -1,0 +1,13 @@
+# OS generated files #
+######################
+.phpintel
+
+# IDE generated files #
+#######################
+.idea/*
+nbproject/*
+
+# Project files #
+#######################
+/test.php
+
