@@ -1,5 +1,5 @@
 <?php
-        include 'db.php';
+include 'db.php';
 include 'helper.php';
 
 $return["error"] = false;
