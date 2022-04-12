@@ -1,16 +1,15 @@
 <?php
-
 include 'db.php';
 include 'helper.php';
 
 #file_put_contents('request_data.txt', print_r($_REQUEST, true));
 
 if (isset($_REQUEST["action"]) && $_REQUEST['action'] == 'get_job_lists') {
-         $total_sql = "SELECT * FROM jobs";
+    $total_sql = "SELECT * FROM jobs";
     $total_result = mysqli_query($connection, $total_sql);
     $no_of_rows = mysqli_num_rows($total_result);
     $start_value = ceil($no_of_rows / 10);
-   
+
     $page = trim($_REQUEST['page']);
     $start = 10 * $page;
     $end = 10 + $start;
@@ -24,7 +23,7 @@ if (isset($_REQUEST["action"]) && $_REQUEST['action'] == 'get_job_lists') {
         $return["errorCode"] = 0;
         $return["message"] = '';
     } else {
-        $return["errorCode"] = - 1;
+        $return["errorCode"] = -1;
         $return["message"] = 'No job found.';
         $return["response_data"] = [];
     }
@@ -39,12 +38,12 @@ if (isset($_REQUEST["action"]) && $_REQUEST['action'] == 'get_job_lists') {
         $return["errorCode"] = 0;
         $return["message"] = '';
     } else {
-        $return["errorCode"] = - 1;
+        $return["errorCode"] = -1;
         $return["message"] = 'No job found.';
         $return["response_data"] = [];
     }
 } else {
-    $return["errorCode"] = - 1;
+    $return["errorCode"] = -1;
     $return["message"] = 'Send all parameters.';
     $return["response_data"] = [];
 }
