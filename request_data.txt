@@ -1,23 +1,9 @@
 Array
 (
-    [responsibilities] =>  Must know php will be plsu
-Good knowledge in git, GitHub
-excellent knowledge in Laravel
-know about html, css
-    [jobPosition] => Senior Software engineer 
-    [company] => Personal company 
-    [vacancy] => 1
-    [jobType] => Full time
-    [educationalRequirements] =>  bsc in computer 
-    [experience] => Dhaka to bagerhat
-    [additionalRequirements] => Dggfs gii ggk fff
-gghhj gghhj jjkkk
-gghhj gjkk gjkk
-    [location] => anywhere
-    [salary] => 1200-2000
-    [benefits] => All type allow
-    [age] => 20-30
-    [gender] => both
-    [deadline] => 2022-5-12
-    [action] => register_job
+    [phone] => 01719016426
+    [name] => IT Company
+    [email] => it@suppport.com
+    [address] => Dhaka
+    [action] => update_profile
+    [uid] => 3
 )

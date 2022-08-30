@@ -6,7 +6,7 @@ file_put_contents('request_data.txt', print_r($_REQUEST, true));
 
 if ($_REQUEST['action'] == 'register_job') {
 
-    $uid = formatAndCleanInput($connection, $_POST["uid"]);
+    $company_id = formatAndCleanInput($connection, $_POST["company_id"]);
     $responsibilities = formatAndCleanInput($connection, $_POST["responsibilities"]);
     $jobPosition = formatAndCleanInput($connection, $_POST["jobPosition"]);
     $company = formatAndCleanInput($connection, $_POST["company"]);
@@ -24,8 +24,8 @@ if ($_REQUEST['action'] == 'register_job') {
     $deadline = formatAndCleanInput($connection, $_POST["deadline"]);
     $deadline_format = date("Y-m-d", strtotime($deadline));
 
-    $sql = "INSERT INTO jobs (position,company,responsibilities,vacancy,employment_status,educational_requirements,experience_requirements,additional_requirements,location,salary,benefits,age,gender,deadline,created)
-        VALUES ('" . $jobPosition . "','" . $company . "' ,'" . $responsibilities . "' ,'" . $vacancy . "' ,'" . $jobType . "' ,'" . $educationalRequirements . "' ,'" . $experience . "' ,'" . $additionalRequirements . "' ,'" . $location . "' ,'" . $salary . "' ,'" . $benefits . "' ,'" . $age . "' ,'" . $gender . "' ,'" . $deadline_format . "' , NOW())";
+    $sql = "INSERT INTO jobs (position,company_id,responsibilities,vacancy,employment_status,educational_requirements,experience_requirements,additional_requirements,location,salary,benefits,age,gender,deadline,created)
+        VALUES ('" . $jobPosition . "','" . $company_id . "' ,'" . $responsibilities . "' ,'" . $vacancy . "' ,'" . $jobType . "' ,'" . $educationalRequirements . "' ,'" . $experience . "' ,'" . $additionalRequirements . "' ,'" . $location . "' ,'" . $salary . "' ,'" . $benefits . "' ,'" . $age . "' ,'" . $gender . "' ,'" . $deadline_format . "' , NOW())";
     $res = mysqli_query($connection, $sql);
 
     $return["errorCode"] = 0;

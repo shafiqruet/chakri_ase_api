@@ -24,7 +24,7 @@ if (isset($_POST["phone"]) && isset($_POST["password"])) {
         // is there is any data with that username
         $obj = mysqli_fetch_object($res);
         if (password_verify($password, $obj->password)) {
-            $return["success"] = true;
+            $return["errorCode"] = 0;
             $return["uid"] = $obj->uid;
             $return["name"] = $obj->name;
             $return["address"] = $obj->address;
@@ -33,7 +33,7 @@ if (isset($_POST["phone"]) && isset($_POST["password"])) {
             $return["message"] = "Your Password is Incorrect.";
         }
     } else {
-        $return["error"] = true;
+        $return["errorCode"] = -1;
         $return["message"] = 'No username found.';
     }
 } else {
